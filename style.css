@@ -7,10 +7,14 @@
 p{
   color: gray;
 }
+body{
+  overflow-x: hidden;
+}
 .container{
     width: 100%;
     max-height: auto;
     background-color: #E5E5E5;
+
 }
 .container-body{
     width: 80%;
@@ -44,13 +48,17 @@ p{
     padding: 5px;
     width: 80%;
   }
-  .nav-item a {
+.nav-item a {
     /* margin-left: 1rem; */
     text-decoration: none;
     color: black;
     padding: 5px;
     font-size: 0.8rem;
-  }
+}
+.nav-item a:hover{
+  font-size: 1rem;
+  color:orange;
+}
   
   .navbar-right {
     width: 20%;
@@ -63,6 +71,7 @@ p{
   font-size: 1vw;
   padding: 5%;
   color: orange;
+  cursor: pointer;
 }
 #msg-icon{
   margin-left:5px;
@@ -119,6 +128,19 @@ p{
     position: relative;
     padding: 3%;
 }
+.multi-img:hover{
+  animation-name: rotate;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+}
+@keyframes rotate{
+  from{
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(360deg);
+  }
+}
 .img-main{
   padding: 2%;
   width: 100%;
@@ -133,7 +155,8 @@ p{
   position: absolute;
   background-color: white;
   bottom: 7%;
-  width: 23%;
+  width: 25%;
+  border-radius: 10px;
 }
 .img-icon{
   position: absolute;
@@ -197,6 +220,10 @@ p{
   width: 45%;
   text-align: center;
 }
+.next:hover{
+  color: white;
+  background-color: black;
+}
 .previous {
     color:white;
     width: 45%;
@@ -206,8 +233,10 @@ p{
     text-align: center;
     background-color: black;
 }
-
-
+.previous:hover{
+  color: black;
+  background-color: #E5E5E5;
+}
 .category-card{
   display: flex;
   justify-content: space-between;
@@ -217,8 +246,16 @@ p{
   width: 15%;
   background: cover;
 }
+.beach img{
+  border-radius: 75px; 
+}
+.beach img:hover{
+  scale: 120%;
+  box-shadow: 5px 5px 5px rgb(78, 101, 104);
+}
 .beach h4{
   text-align: center;
+  padding-top: 10%;
 }
 .our-story
 {
@@ -232,6 +269,17 @@ p{
   width: 50%;
   padding: 3%;
 }
+.story-left{
+  position: relative;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-timing-function:ease-in;
+}
+
+@keyframes example {
+  0%   {left:-150px; top:0px;}
+  25%  {left:0px; top:0px;}  
+}
 .camera-man{
   width: 100%;
   background-color:#ffd482;
@@ -243,6 +291,17 @@ p{
   width: 50%;
   padding: 4%;
 }
+.story-right{
+  position: relative;
+  animation-name: example1;
+  animation-duration: 5s;
+  /* animation-timing-function:ease-in; */
+}
+
+@keyframes example1 {
+  0%   {right:-100px; top:0px;}
+  25%  {right:0px; top:0px;}  
+} 
 .story-info h5{
   letter-spacing: 3px;
   color: orange;
@@ -276,6 +335,10 @@ p{
   color: gray;
   font-size: 0.7rem;
 }
+.journey:hover{
+  box-shadow: 3px 4px 5px rgb(103, 102, 102);
+  scale: 110%;
+}
 .destination{
   width: 100%;
   padding-top: 5%;
@@ -306,6 +369,10 @@ p{
   border-radius: 10px;
   padding: 1%;
 }
+.destination-card:hover{
+  scale: 110%;
+  box-shadow: 3px 3px 5px rgb(115, 114, 114);
+}
 .book-now{
   width: 100%;
   display: flex;
@@ -315,7 +382,24 @@ p{
   width: 7vw;
   height: 5vh;
   border-radius: 20px;
+  /* animation: glowing 1300ms infinite; */
 }
+/* @keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+} */
+
+
 #click-over{
   color: white;
   background-color: black;
@@ -378,6 +462,12 @@ p{
 .right-img-bottom-right{
   width: 48%;
 }
+.bottom-image{
+  width: 100%;
+}
+.bottom-image:hover{
+  transform: scale(105%);
+}
 
 
 .review{
@@ -401,8 +491,20 @@ p{
   width: 100%;
   background-color: rgb(223, 101, 57);
   border-radius: 500px;
-  overflow: hidden;
- 
+  overflow: hidden; 
+}
+.review-left:hover{
+  animation-name: rotate1;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+@keyframes rotate1{
+  from{
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(360deg);
+  }
 }
 .review-top{
   width: 100%;
@@ -415,6 +517,9 @@ p{
   border-radius: 10px;
   margin-top: 5%;
   padding: 5%;
+}
+.info-top{
+  font-size: 0.8rem;
 }
 .review-bottom{
   margin-top: 5%;
@@ -455,14 +560,15 @@ input[type=text]{
   background-repeat: no-repeat;
 }
 #text1{
-    padding-top: 2%;
+    padding: 2%;
     background-image: url(./Images/msg.png);
-    background-position: right;
-    background-repeat: no-repeat;
+    background-position-x:97%;
+    background-position-y: center;
     background-size: 30px;
-    padding-right: 2%;
     margin-top: 10%;
-
+}
+input[type=text]:hover{
+  transform: scale(110%);
 }
 .footer{
   width: 100%;
@@ -485,6 +591,10 @@ input[type=text]{
   padding: 6%;
   color: gray;
   font-size: 0.7rem;
+}
+.footer li:hover{
+  color: #ffd482;
+  font-size: 0.8rem;
 }
 .footer-icon{
   width: 100%;
@@ -516,16 +626,28 @@ input[type=text]{
   display: none;
 }
 #check:checked ~ .nav-item{
-  left:30%;
+  left:25%;
   /* display: block !important; */
-  /* transition: 3s; */
+  transition: 2s;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
 }
 
 
 
 @media (min-width:350px) and (max-width:450px) { 
   .nav-item{
-    width: 40%;
+    width: 50%;
     height: 30vh;
     background-color: #ffd382eb;
     top: 80px;
@@ -543,6 +665,9 @@ input[type=text]{
   padding: 1%;
   font-size: 5vw;
   color: rgb(49, 21, 0);
+}
+.nav-item a:hover{
+  color: red;
 }
 #checkbtn{
   display: block;
@@ -638,9 +763,9 @@ input[type=text]{
   flex-direction: column;
 }
 .beach {
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 8%;
+  width: 70%;
+  margin-left: 15%;
+ padding-top: 10%;
 }
 .our-story {
   display: flex;
@@ -650,10 +775,10 @@ input[type=text]{
   width: 100%;
 }
 .camera-man{
-  height: 45vh;
+  height: 42vh;
 }
 .camera-man img {
-  height: 300px;
+  height: 395px;
 }
 .story-right{
   width: 100%;
